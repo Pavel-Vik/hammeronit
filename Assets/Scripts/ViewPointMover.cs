@@ -6,7 +6,7 @@ public class ViewPointMover : MonoBehaviour
 {
     public float moveSpeed = 2;
 
-    private bool isFinish = false;
+    private bool isRunning = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +16,15 @@ public class ViewPointMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFinish == false)
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
+        if (isRunning == true)
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
+
+        if (Input.GetMouseButtonDown(0))
+            isRunning = true;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Finish")
-            isFinish = true;
+            isRunning = false;
     }
 }
