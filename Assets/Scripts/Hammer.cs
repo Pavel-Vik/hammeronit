@@ -30,7 +30,10 @@ public class Hammer : MonoBehaviour
             isNail = true;
 
         if (other.tag == "Plank" && isNail == false)
+        {
             Instantiate(crack, new Vector3(0f, 0.14f, transform.position.z), Quaternion.Euler(90, 0, 0));
+            GameController.misses++;
+        }
     }
 
     private void OnTriggerExit(Collider other)
