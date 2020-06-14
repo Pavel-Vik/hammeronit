@@ -6,6 +6,7 @@ public class Hammer : MonoBehaviour
 {
     private Animator anim;
     public GameObject crack;
+    public AudioManager audMan;
 
     private bool isNail = false;
     // Start is called before the first frame update
@@ -20,7 +21,9 @@ public class Hammer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (GameController.isOver == false && GameController.isWin == false)
+            {
                 anim.SetTrigger("Attack");
+            }
         }
 
         Debug.Log("Is nail" + isNail);
@@ -35,6 +38,7 @@ public class Hammer : MonoBehaviour
         if (other.tag == "Plank" && isNail == false)
         {
             Instantiate(crack, new Vector3(0f, 0.14f, transform.position.z), Quaternion.Euler(90, 0, 0));
+            audMan.GetComponent<AudioManager>().WoodHit();
             GameController.misses++;
         }
     }

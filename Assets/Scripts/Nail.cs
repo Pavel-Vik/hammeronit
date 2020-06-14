@@ -6,6 +6,7 @@ public class Nail : MonoBehaviour
 {
     public Transform nailRenderer;
     public float downDepth = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,11 @@ public class Nail : MonoBehaviour
         if (other.tag == "Hammer")
         {
             nailRenderer.transform.position = new Vector3(0f, downDepth, transform.position.z);
+            
             gameObject.GetComponent<Collider>().enabled = false;
             Debug.Log("POPAL");
+
+            AudioManager.isNailSound = true;
         }
     }
 }

@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   downDepth: 0.1
+  hitCount: 3
+  audMan: {fileID: 0}
 --- !u!1001 &2245922489474833796
 PrefabInstance:
   m_ObjectHideFlags: 0

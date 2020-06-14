@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nailRenderer: {fileID: 3542026413981914453}
   downDepth: 0.024
+  audMan: {fileID: 0}
 --- !u!1001 &3542026413982306261
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class BigNail : MonoBehaviour
     public float downDepth = 0;
     public int hitCount = 3;
 
+    public AudioManager audMan;
+
     private int hits = 0;
     //public int hitsCount = 2;
     // Start is called before the first frame update
@@ -20,7 +22,10 @@ public class BigNail : MonoBehaviour
     void Update()
     {
         if (hits == hitCount)
+        {
             GameController.isWin = true;
+            audMan.WinSound();
+        }
     }
 
 
@@ -31,6 +36,7 @@ public class BigNail : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(0f, transform.position.y - downDepth, transform.position.z);
             hits++;
+            audMan.BigNailHit();
         }
     }
 }
