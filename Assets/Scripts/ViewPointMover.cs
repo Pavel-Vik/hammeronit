@@ -17,7 +17,7 @@ public class ViewPointMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRunning == true && isFinish == false)
+        if (isRunning == true && isFinish == false && GameController.isOver == false)
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
 
         if (Input.GetMouseButtonDown(0))

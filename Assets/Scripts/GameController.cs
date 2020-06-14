@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public Material lostStarMat;
 
     public static int misses = 0;
+    public static bool isOver = false;
 
     public int missesForStar1 = 1;
     public int missesForStar2 = 1;
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         misses = 0;
+        isOver = false;
     }
 
     // Update is called once per frame
@@ -38,6 +40,9 @@ public class GameController : MonoBehaviour
         if (misses == missesForStar3)
         {
             star3.material = lostStarMat;
+            isOver = true;
         }
     }
+
+
 }
