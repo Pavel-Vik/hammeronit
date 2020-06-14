@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip winSound;
 
     public static bool isNailSound = false;
-    public static bool isWinSound = false;
+    public static bool isWoodSound = false;
 
     private AudioSource audSrc;
 
@@ -27,6 +27,13 @@ public class AudioManager : MonoBehaviour
 
             audSrc.PlayOneShot(hammerSound);
             isNailSound = false;
+        }
+
+        if (isWoodSound == true)
+        {
+
+            audSrc.PlayOneShot(woodhit);
+            isWoodSound = false;
         }
 
         //if (isBigNailSound == true)
