@@ -6,6 +6,9 @@ public class BigNail : MonoBehaviour
 {
     //public Transform nailRenderer;
     public float downDepth = 0;
+    public int hitCount = 3;
+
+    private int hits = 0;
     //public int hitsCount = 2;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +19,8 @@ public class BigNail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hits == hitCount)
+            GameController.isWin = true;
     }
 
 
@@ -25,7 +29,8 @@ public class BigNail : MonoBehaviour
     {
         if (other.tag == "Hammer")
         {
-                gameObject.transform.position = new Vector3(0f, transform.position.y - downDepth, transform.position.z);
+            gameObject.transform.position = new Vector3(0f, transform.position.y - downDepth, transform.position.z);
+            hits++;
         }
     }
 }

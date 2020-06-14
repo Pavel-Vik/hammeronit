@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 
     public static int misses = 0;
     public static bool isOver = false;
+    public static bool isWin = false;
 
     public int missesForStar1 = 1;
     public int missesForStar2 = 1;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
     {
         misses = 0;
         isOver = false;
+        isWin = false;
     }
 
     // Update is called once per frame

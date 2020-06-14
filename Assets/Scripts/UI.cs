@@ -7,6 +7,7 @@ public class UI : MonoBehaviour
 {
 
     public GameObject GameOverPanel;
+    public GameObject WinScreenPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,19 @@ public class UI : MonoBehaviour
     {
         if (GameController.isOver == true)
             GameOverPanel.SetActive(true);
+
+        if (GameController.isWin == true)
+            WinScreenPanel.SetActive(true);
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
         GameController.isOver = false;
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

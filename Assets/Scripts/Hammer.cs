@@ -19,7 +19,7 @@ public class Hammer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (GameController.isOver == false)
+            if (GameController.isOver == false && GameController.isWin == false)
                 anim.SetTrigger("Attack");
         }
 
