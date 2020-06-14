@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3542026413572646693}
   m_Layer: 0
   m_Name: Nail
-  m_TagString: Untagged
+  m_TagString: Nail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
