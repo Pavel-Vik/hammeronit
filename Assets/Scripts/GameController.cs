@@ -11,7 +11,9 @@ public class GameController : MonoBehaviour
 
     public static int misses = 0;
 
-    public int missesCountToFail = 3;
+    public int missesForStar1 = 1;
+    public int missesForStar2 = 1;
+    public int missesForStar3 = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +25,19 @@ public class GameController : MonoBehaviour
     void Update()
     {
         Debug.Log("Misses: " + misses);
-        if (misses == missesCountToFail)
+        if (misses == missesForStar1)
         {
             star1.material = lostStarMat;
+        }
+
+        if (misses == missesForStar2)
+        {
+            star2.material = lostStarMat;
+        }
+
+        if (misses == missesForStar3)
+        {
+            star3.material = lostStarMat;
         }
     }
 }

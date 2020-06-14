@@ -28,4 +28,10 @@ public class ViewPointMover : MonoBehaviour
         if (other.tag == "Finish")
             isFinish = true;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Nail")
+            GameController.misses++;
+    }
 }

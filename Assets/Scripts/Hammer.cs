@@ -6,6 +6,7 @@ public class Hammer : MonoBehaviour
 {
     private Animator anim;
     public GameObject crack;
+    private int clickCount = 0;
 
     private bool isNail = false;
     // Start is called before the first frame update
@@ -18,7 +19,11 @@ public class Hammer : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            anim.SetTrigger("Attack");
+        {
+            clickCount++;
+            if (clickCount > 1)
+                anim.SetTrigger("Attack");
+        }
 
         Debug.Log("Is nail" + isNail);
     }
