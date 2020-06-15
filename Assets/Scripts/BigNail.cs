@@ -11,6 +11,7 @@ public class BigNail : MonoBehaviour
     public AudioManager audMan;
 
     private int hits = 0;
+    private int win = 0;
     //public int hitsCount = 2;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,9 @@ public class BigNail : MonoBehaviour
         if (hits == hitCount)
         {
             GameController.isWin = true;
-            audMan.WinSound();
+            win++;
+            if(win==1)
+                audMan.WinSound();
         }
     }
 
